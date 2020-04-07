@@ -79,7 +79,7 @@ func (ni *NullIter) Next() bool {
 	return false
 }
 
-func (*NullIter) Err() error {
+func (*NullIter) Error() error {
 	return nil
 }
 

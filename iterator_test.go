@@ -60,7 +60,7 @@ func TestIterator(t *testing.T) {
 		test.AssertEqual(t, expected, val.(string))
 	}
 
-	if err := it.Err(); err != nil {
+	if err := it.Error(); err != nil {
 		t.Fatalf("unexpected iteration error: %v", err)
 	}
 

@@ -26,7 +26,7 @@ func (i *memiter) Next() bool {
 	return !i.exhausted()
 }
 
-func (*memiter) Err() error {
+func (*memiter) Error() error {
 	return nil
 }
 

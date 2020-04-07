@@ -58,7 +58,7 @@ func (m *mergeIterator) buildHeap(hasValue func(i Iterator) bool) {
 
 	for _, iter := range m.iters {
 		if !hasValue(iter) {
-			if m.err = iter.Err(); m.err != nil {
+			if m.err = iter.Error(); m.err != nil {
 				return
 			}
 
@@ -116,7 +116,7 @@ func (m *mergeIterator) Next() bool {
 
 	if iter.Next() {
 		heap.Push(&m.heap, iter)
-	} else if m.err = iter.Err(); m.err != nil {
+	} else if m.err = iter.Error(); m.err != nil {
 		return false
 	}
 
@@ -124,7 +124,7 @@ func (m *mergeIterator) Next() bool {
 }
 
 // Err returns the possible iteration error.
-func (m *mergeIterator) Err() error {
+func (m *mergeIterator) Error() error {
 	return m.err
 }
 

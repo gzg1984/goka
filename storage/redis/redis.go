@@ -160,7 +160,7 @@ func (i *redisIterator) Key() []byte {
 	return []byte(key)
 }
 
-func (i *redisIterator) Err() error {
+func (i *redisIterator) Error() error {
 	return nil
 }
 

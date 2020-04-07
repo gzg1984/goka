@@ -161,7 +161,7 @@ func TestEmptyMergeIterator(t *testing.T) {
 		t.Fatalf("expected an empty merge iterator to return false on next")
 	}
 
-	if err := iter.Err(); err != nil {
+	if err := iter.Error(); err != nil {
 		t.Fatalf("expected an empty merge iterator to return no error but got %q", err)
 	}
 
@@ -189,7 +189,7 @@ func testOrderedIteration(t *testing.T, iter Iterator) {
 
 	if iter.Next() != false {
 		t.Fatalf("expected iterator to be exhausted but it was not")
-	} else if err := iter.Err(); err != nil {
+	} else if err := iter.Error(); err != nil {
 		t.Fatalf("error iterating: %v", err)
 	} else if counter < 10 {
 		t.Fatalf("expected to have iterated 10 pairs, actually got %v", counter)
